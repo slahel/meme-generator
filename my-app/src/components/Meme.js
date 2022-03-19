@@ -1,8 +1,9 @@
 import React from "react";
+import "./Meme.css";
 
 export default function Meme() {
   return (
-    <main>
+    <main className="main">
       <div className="form">
         <input
           type="text"

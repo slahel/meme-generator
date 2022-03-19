@@ -1,8 +1,13 @@
+main {
+  margin: 30px;
+}
 .form {
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
   gap: 17px;
   margin-bottom: 17px;
+  padding-bottom: 50px;
+  /* box-shadow: 0 5px 4px -2px rgba(0, 0, 0, 0.1); */
 }
 
 .form--input {
@@ -16,7 +21,7 @@
   border-radius: 5px;
   background: linear-gradient(90deg, #0288d1 3%, #03a9f4 100%);
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   border: none;
   cursor: pointer;

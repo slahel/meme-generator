@@ -4,10 +4,10 @@
   display: block;
   margin: 30px auto;
   max-width: 800px;
+  border-radius: 5px;
 }
 .App .header {
   color: white;
   background: linear-gradient(90deg, #0288d1 3%, #03a9f4 100%);
   padding: 15px;
-  border-radius: 5px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Meme.css";
 
 export default function Meme() {
@@ -8,6 +8,15 @@ export default function Meme() {
     randomImage: null,
   });
   const [allMeme, setAllMeme] = useState([]);
+
+  useEffect(() => {
+    async function getMeme() {
+      const response = await fetch("https://api.imgflip.com/get_memes");
+      const data = await response.json();
+      setAllMeme(data.data.memes);
+    }
+    getMeme();
+  }, []);
 
   function getMemeImage() {
     const randomNumber = Math.floor(Math.random() * allMeme.length);
@@ -45,7 +54,9 @@ export default function Meme() {
           value={meme.bottomText}
           onChange={handleChange}
         />
-        <button className="form--button">Get a new meme image </button>
+        <button className="form--button" onClick={getMemeImage}>
+          Get a new meme image{" "}
+        </button>
         <div className="meme">
           <img src={meme.randomImage} className="meme--image" />
           <h2 className="meme--text top">{meme.topText}</h2>
